@@ -1,0 +1,293 @@
+{
+    "dataset": "intuitive_physics",
+    "queries": [
+        {
+            "question": "There is a tilted board above a bucket. Where does a ball end up if it is placed on the board?",
+            "responses": {
+                "openai": "\n\nThe ball will end up in the bucket.",
+                "aleph_alpha": "\n\nA:\n\nThe ball will roll down the board.\n\nA:\n\nThe ball will roll down the board.\n\nThe ball will roll down the board.\n\nThe ball will roll down the board.\n\n",
+                "opt": "\n\nA. It will fall into the bucket.\n\nB. It will fall into the bucket.\n\nC. It will fall into the bucket.\n\nD. It will fall into the bucket.\n\nE"
+            }
+        },
+        {
+            "question": "There is a tilted board above a bucket. Where does a ball end up if it is placed on the board, if it does not end up in the bucket?",
+            "responses": {
+                "openai": "\n\nThe ball will end up on the ground.",
+                "aleph_alpha": "\n. A ball is placed on a tilted board. Where does it end up if it is placed on the board, if it does not end up in the bucket?\n. A ball is placed on a tilted board. Where does it",
+                "opt": "\n\nA. It will fall into the bucket.\n\nB. It will fall into the bucket.\n\nC. It will fall into the bucket.\n\nD."
+            }
+        },
+        {
+            "question": "There is a board above a bucket. Where does a ball end up if it is placed on the board?",
+            "responses": {
+                "openai": "\n\nThe ball will end up in the bucket.",
+                "aleph_alpha": "\n. A ball is placed on a table. Where does it end up if it is rolled under a table?\n. A ball is placed on a table. Where does it end up if it is rolled under a table?\n. A ball",
+                "opt": "\n\nA. It falls into the bucket.\n\nB. It falls into the bucket and bounces off the board.\n\nC. It falls into the bucket and bounces off the board and into the bucket below.\n\nD"
+            }
+        },
+        {
+            "question": "There is a leveled board above a bucket. Where does a ball end up if it is placed on the board?",
+            "responses": {
+                "openai": "\n\nThe ball will end up in the bucket.",
+                "aleph_alpha": "\n\nA: The ball will roll down the board and into the bucket.\n\nA: The ball will roll down the board and into the bucket.\n\nA: The ball will roll down the board and into the bucket.\n\n",
+                "opt": "\n\nA. It falls into the bucket.\n\nB. It falls into the bucket and bounces off the board.\n\nC. It falls into the bucket and bounces off the board and into the bucket below.\n\n"
+            }
+        },
+        {
+            "question": "A ball is placed on a table and rolls off. What does this tell us about the table?",
+            "responses": {
+                "openai": "\n\nThe table is not level.",
+                "aleph_alpha": "\n\nA. The table is flat.\nB. The table is round.\nC. The table is square.\nD. The table is rectangular.\n\nAnswer: C\n\nExplanation:\n\nThe table is rectangular",
+                "opt": "\n\nA ball is placed on a table and rolls off. What does this tell us about the table?\n\nA ball is placed on a table and rolls off. What does this tell us about the table?\n\nA ball is placed"
+            }
+        },
+        {
+            "question": "A ball is placed on a surface and rolls off. What does this tell us about the surface?",
+            "responses": {
+                "openai": "\n\nThe surface is not level.",
+                "aleph_alpha": "\n. A ball is placed on a surface and rolls off. What does this tell us about the surface?\n. A ball is placed on a surface and rolls off. What does this tell us about the surface?\n. A ball is placed",
+                "opt": "\n\nA ball is placed on a surface and rolls off. What does this tell us about the surface?\n\nA ball is placed on a surface and rolls off. What does this tell us about the surface?\n\nA ball is placed"
+            }
+        },
+        {
+            "question": "A ball is placed on a table and rolls to the center. What does this tell us about the table?",
+            "responses": {
+                "openai": "\n\nThe table is level.",
+                "aleph_alpha": "\n. A ball is placed on a table and rolls to the center. What does this tell us about the table?\n. A ball is placed on a table and rolls to the center. What does this tell us about the table?\n.",
+                "opt": "\n\nA ball is placed on a table and rolls to the center. What does this tell us about the table?\n\nA ball is placed on a table and rolls to the center. What does this tell us about the table?"
+            }
+        },
+        {
+            "question": "A ball is placed on a surface and rolls to the center. What does this tell us about the surface?",
+            "responses": {
+                "openai": "\n\nThe surface is curved.",
+                "aleph_alpha": "\n. A ball is placed on a surface and rolls to the center. What does this tell us about the surface?\n. A ball is placed on a surface and rolls to the center. What does this tell us about the surface?\n.",
+                "opt": "\n\nA ball is placed on a surface and rolls to the center. What does this tell us about the surface?\n\nA ball is placed on a surface and rolls to the center. What does this tell us about the surface?"
+            }
+        },
+        {
+            "question": "A block is placed on one support. What happens if the support is removed?",
+            "responses": {
+                "openai": "\n\nIf the support is removed, the block will fall.",
+                "aleph_alpha": "\n. A block is placed on one support. What happens if the support is removed?\n. A block is placed on one support. What happens if the support is removed?\n. A block is placed on one support. What happens if the",
+                "opt": "\n\nA block is placed on one support. What happens if the support is removed?\n\nA block is placed on one support. What happens if the support is removed?\n\nA block is placed on one support. What happens if the support is removed?"
+            }
+        },
+        {
+            "question": "A block is placed on two supports. What happens if one of the supports is removed?",
+            "responses": {
+                "openai": "\n\nIf one of the supports is removed, the block will fall.",
+                "aleph_alpha": "\n. A block is placed on two supports. What happens if one of the supports is removed?\n. A block is placed on two supports. What happens if one of the supports is removed?\n. A block is placed on two supports.",
+                "opt": "\n\nA block is placed on two supports. What happens if one of the supports is removed?\n\nA block is placed on two supports. What happens if one of the supports is removed?\n\nA block is placed on two supports. What happens"
+            }
+        },
+        {
+            "question": "A block is placed on three supports. What happens if one of the supports is removed?",
+            "responses": {
+                "openai": "\n\nIf one of the supports is removed, the block will fall.",
+                "aleph_alpha": "\n. A block is placed on three supports. What happens if one of the supports is removed?\n. A block is placed on three supports. What happens if one of the supports is removed?\n. A block is placed on three supports.",
+                "opt": "\n\nA block is placed on three supports. What happens if one of the supports is removed?\n\nA block is placed on three supports. What happens if one of the supports is removed?\n\nA block is placed on three supports. What happens"
+            }
+        },
+        {
+            "question": "A block is placed on three supports. What happens if the left support is removed?",
+            "responses": {
+                "openai": "\n\nIf the left support is removed, the block will fall to the left.",
+                "aleph_alpha": "\n. A block is placed on three supports. What happens if the right support is removed?\n. A block is placed on three supports. What happens if the top support is removed?\n. A block is placed on three supports. What happens",
+                "opt": "\n\nA block is placed on three supports. What happens if the left support is removed?\n\nA block is placed on three supports. What happens if the left support is removed?\n\nA block is placed on three supports. What happens if the left"
+            }
+        },
+        {
+            "question": "A block is placed on three supports. What happens if the right support is removed?",
+            "responses": {
+                "openai": "\n\nIf the right support is removed, the block will fall to the left.",
+                "aleph_alpha": "\n. A block is placed on three supports. What happens if the left support is removed?\n. A block is placed on three supports. What happens if the middle support is removed?\n. A block is placed on three supports. What happens",
+                "opt": "\n\nA block is placed on three supports. What happens if the right support is removed?\n\nA block is placed on three supports. What happens if the right support is removed?\n\nA block is placed on three supports. What happens if the right"
+            }
+        },
+        {
+            "question": "A block is placed on three supports. What happens if the middle support is removed?",
+            "responses": {
+                "openai": "\n\nIf the middle support is removed, the block will fall.",
+                "aleph_alpha": "\n. A block is placed on three supports. What happens if the middle support is removed?\n. A block is placed on three supports. What happens if the middle support is removed?\n. A block is placed on three supports. What happens",
+                "opt": "\n\nA block is placed on three supports. What happens if the middle support is removed?\n\nA block is placed on three supports. What happens if the middle support is removed?\n\nA block is placed on three supports. What happens if the middle"
+            }
+        },
+        {
+            "question": "A vase is supported by a table. What happens if the table is removed?",
+            "responses": {
+                "openai": "\n\nIf the table is removed, the vase will fall to the ground.",
+                "aleph_alpha": "\n. A vase is supported by a table. What happens if the table is removed?\n. A vase is supported by a table. What happens if the table is removed?\n. A vase is supported by a table. What happens if the",
+                "opt": "\n\nA. The vase falls over.\n\nB. The vase falls over.\n\nC. The vase falls over.\n\nD. The vase falls over.\n\nE. The vase falls over.\n\nAnswer"
+            }
+        },
+        {
+            "question": "An vase is supported by a table. What happens if the table disappears?",
+            "responses": {
+                "openai": "\n\nIf the table disappears, the vase will fall to the ground.",
+                "aleph_alpha": "\n. A vase is supported by a table. What happens if the table disappears?\n. A vase is supported by a table. What happens if the table disappears?\n. A vase is supported by a table. What happens if the table disappears",
+                "opt": "\n\nA. The vase falls over.\n\nB. The vase falls over.\n\nC. The vase falls over.\n\nD. The vase falls over.\n\nE. The vase falls over.\n\nF."
+            }
+        },
+        {
+            "question": "A heavy and a light ball are heading towards each other. Which ball will bounce away?",
+            "responses": {
+                "openai": "\n\nThe light ball will bounce away.",
+                "aleph_alpha": "\n\nA:\n\nThe heavy ball will bounce away.\nThe light ball will bounce away.\nThe heavy ball will bounce away.\nThe light ball will bounce away.\nThe heavy ball will bounce away.\nThe light ball will",
+                "opt": "\n\nA heavy and a light ball are heading towards each other. Which ball will bounce away?\n\nA heavy and a light ball are heading towards each other. Which ball will bounce away?\n\nA heavy and a light ball are heading towards each"
+            }
+        },
+        {
+            "question": "Two equal weight balls are heading towards each other. Which ball will bounce away?",
+            "responses": {
+                "openai": "\n\nThe ball with more momentum will bounce away.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is:\n\nThe ball with the larger mass will bounce away.\n\nThe reason is that the force of gravity is proportional to the mass of the object.\n\nA:\n\nThe heavier ball",
+                "opt": "\n\nA. The heavier ball\n\nB. The lighter ball\n\nC. The ball with more mass\n\nD. The ball with less mass\n\nE. The ball with the same mass\n\nF. The ball with the same weight\n\n"
+            }
+        },
+        {
+            "question": "Two balls are heading towards each other with the same speed. Which ball will bounce away?",
+            "responses": {
+                "openai": "\n\nThe ball with more mass will bounce away.",
+                "aleph_alpha": "\n\nA:\n\nThe ball with the higher mass will bounce away.\nThe reason is that the force of gravity is proportional to the mass of the object.\nThe force of gravity is:\n$$F = -GmM/",
+                "opt": "\n\nAnswer: The ball with lesser mass will bounce away.\n\nQuestion: A ball is thrown upwards with a speed of 20 m/s. The ball is thrown upwards with a speed of 20 m/s. The ball is thrown upwards with a"
+            }
+        },
+        {
+            "question": "Two equal weight balls are heading towards each other with the same speed. Which ball will bounce away?",
+            "responses": {
+                "openai": "\n\nBoth balls will bounce away.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is the one that is closer to the center of the circle.\n\nA:\n\nThe answer is the one that is closer to the center of the circle.\n\nThe answer is the one that",
+                "opt": "\n\nA. The heavier ball\n\nB. The lighter ball\n\nC. The ball with more mass\n\nD. The ball with less mass\n\nAnswer: D\n\nExplanation:\n\nThe ball with less mass"
+            }
+        },
+        {
+            "question": "A heavy and a light object are placed on a seesaw. Which object will move up?",
+            "responses": {
+                "openai": "\n\nThe light object will move up.",
+                "aleph_alpha": "\nA. The heavy object\nB. The light object\nC. The seesaw will move up\nD. The seesaw will move down\nE. The seesaw will not move\n\nAnswer: A\n\nQuestion",
+                "opt": "\n\nA heavy and a light object are placed on a seesaw. Which object will move up?\n\nA heavy and a light object are placed on a seesaw. Which object will move up?\n\nA heavy and a light object are"
+            }
+        },
+        {
+            "question": "A heavy and a light object are placed on a seesaw. Which object will move down?",
+            "responses": {
+                "openai": "\n\nThe heavy object will move down.",
+                "aleph_alpha": "\nA. The heavy object\nB. The light object\nC. The seesaw\nD. The ground\nAnswer: A\nExplanation:\nThe seesaw is a simple machine. The seesaw is a simple",
+                "opt": "\n\nA heavy and a light object are placed on a seesaw. Which object will move down?\n\nA heavy and a light object are placed on a seesaw. Which object will move down?\n\nA heavy and a light object are"
+            }
+        },
+        {
+            "question": "Two equal weight object are placed on a seesaw. Which object will move up?",
+            "responses": {
+                "openai": "\n\nThe object on the left will move up.",
+                "aleph_alpha": "\nA. The heavier object\nB. The lighter object\nC. The seesaw will move up\nD. The seesaw will move down\nAnswer: A\nExplanation:\nThe heavier object will move up.\n",
+                "opt": "\n\nA. The heavier object\n\nB. The lighter object\n\nC. The object with the greater mass\n\nD. The object with the lesser mass\n\nE. The object with the greater surface area\n\nF. The object with the"
+            }
+        },
+        {
+            "question": "A heavy and a light object are placed on the same side of a seesaw. Which object will move down?",
+            "responses": {
+                "openai": "\n\nThe heavy object will move down.",
+                "aleph_alpha": "\nA. The heavy object\nB. The light object\nC. The seesaw will move down\nD. The seesaw will not move down\nE. The seesaw will move up\nF. The seesaw",
+                "opt": "\n\nA heavy and a light object are placed on the same side of a seesaw. Which object will move down?\n\nA heavy and a light object are placed on the same side of a seesaw. Which object will"
+            }
+        },
+        {
+            "question": "What is heavier: A hand full of metal or a hand full of feathers?",
+            "responses": {
+                "openai": "\n\nA hand full of metal is heavier than a hand full of feathers.",
+                "aleph_alpha": "\n\nA: The answer is that the metal is heavier.\n\nA: The answer is that the metal is heavier.\n\nA: The answer is that the metal is heavier.\n\nA: The answer is that the metal is",
+                "opt": "\nA hand full of feathers.\nWhy?\nBecause it's easier to pick up a handful of feathers than a handful of metal.\nWhat is heavier: A hand full of metal or a hand full of feathers?\nA hand full of feathers.\nWhy"
+            }
+        },
+        {
+            "question": "What is heavier: A kilogram of metal or a kilogram of feathers?",
+            "responses": {
+                "openai": "\n\nA kilogram of metal is heavier than a kilogram of feathers.",
+                "aleph_alpha": "\n\nA: The answer is that the kilogram of feathers is heavier.\n\nA: The answer is that the kilogram of feathers is heavier.\n\nA: The answer is that the kilogram of feathers is heavier",
+                "opt": "\n\nA kilogram of feathers is heavier than a kilogram of metal.\n\nWhy?\n\nBecause a kilogram of feathers is heavier than a kilogram of metal.\n\nWhat is heavier: A kilogram of feathers or a kilogram of metal"
+            }
+        },
+        {
+            "question": "What is heavier: A kilogram of metal or a kilogram of rock?",
+            "responses": {
+                "openai": "\n\nA kilogram of metal is heavier than a kilogram of rock.",
+                "aleph_alpha": "\n\nA: The kilogram is a unit of mass, not weight.\n\nA: The kilogram is a unit of mass, not weight.\n\nA: The kilogram is a unit of mass, not weight.\n\n",
+                "opt": "\n\nA kilogram of metal is heavier than a kilogram of rock.\n\nWhy?\n\nBecause a kilogram of metal is heavier than a kilogram of rock.\n\nWhat is heavier: A kilogram of metal or a kilogram of rock"
+            }
+        },
+        {
+            "question": "What is heavier: A kilogram of metal or a kilogram of lead?",
+            "responses": {
+                "openai": "\n\nA kilogram of lead is heavier than a kilogram of metal.",
+                "aleph_alpha": "\n\nA: The kilogram is a unit of mass. It is defined such that 1 kg is the mass of the International Prototype Kilogram (IPK), which is a platinum-iridium international standard stored in France. If the IP",
+                "opt": "\n\nA kilogram of metal.\n\nWhy?\n\nBecause a kilogram of metal is heavier than a kilogram of lead.\n\nWhat is heavier: A kilogram of metal or a kilogram of lead?\n\nA kilogram of lead"
+            }
+        },
+        {
+            "question": "\"A kilogram of metal is heavier than a kilogram of feathers\" is what most people say, but in reality",
+            "responses": {
+                "openai": " they weigh the same.",
+                "aleph_alpha": ", the weight of a kilogram of feathers is more than a kilogram of metal.\n\nThe reason is that the density of a substance is the mass of a substance divided by its volume.\n\nThe density of a substance is a",
+                "opt": ", a kilogram of feathers is heavier than a kilogram of metal.\n\nThe reason is that a kilogram of metal is made up of atoms, and atoms are made up of protons, neutrons and electrons."
+            }
+        },
+        {
+            "question": "A wooden beam is placed over a stone. A small plastic bottle is placed on one side. What will happen if a person jumps onto the other side of the beam?",
+            "responses": {
+                "openai": "\n\nThe beam will rotate and the person will jump into the air.",
+                "aleph_alpha": "\n\nA. The bottle will break.\nB. The bottle will not break.\nC. The bottle will break and the person will fall to the ground.\nD. The bottle will not break and the person will fall to the ground",
+                "opt": "\n\nA wooden beam is placed over a stone. A small plastic bottle is placed on one side. What will happen if a person jumps onto the other side of the beam?"
+            }
+        },
+        {
+            "question": "Mary can not move a heavy stone by herself. However, she brought a small object and a metal rod with her. Is Mary able to move the stone?",
+            "responses": {
+                "openai": "\n\nNo, Mary is not able to move the stone.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is no.\nThe problem is that the metal rod is not a part of the stone.\nThe stone is a part of the object.\nThe object is a part of the system.\nThe system",
+                "opt": "\n\nA. Yes\n\nB. No\n\nC. I don't know\n\nD. I don't know\n\nE. I don't know\n\nF."
+            }
+        },
+        {
+            "question": "Mary can not move a heavy stone by herself. However, she brought a small object and a metal rod with her. How can Mary move the stone?",
+            "responses": {
+                "openai": "\n\nMary can use the metal rod as a lever to move the stone.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is that Mary can move the stone by herself.\nThe problem is that the stone is too heavy for Mary to move by herself.\nThe solution is that Mary can move the stone by herself, but she",
+                "opt": "\n\nA. Mary can move the stone by using the rod.\n\nB. Mary can move the stone by using the object.\n\nC. Mary can move the stone by using"
+            }
+        },
+        {
+            "question": "Mary can not lift a heavy stone by herself. However, she brought a small object and a metal rod with her. Is Mary able to lift the stone?",
+            "responses": {
+                "openai": "\n\nNo, Mary is not able to lift the stone.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is no.\nThe problem is that the metal rod is not a part of the stone.\nThe stone is a part of the problem.\nThe problem is that Mary can not lift a heavy stone by",
+                "opt": "\n\nA. Yes\n\nB. No\n\nC. I don't know\n\nD. I don't know\n\nE. I don't know\n\nF."
+            }
+        },
+        {
+            "question": "Mary can not lift a heavy stone by herself. However, she brought a small object and metal rod with her. How can Mary lift the stone?",
+            "responses": {
+                "openai": "\n\nMary can use the metal rod as a lever to lift the stone.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is that Mary can lift the stone if she can lift the rod.\nThe rod is a lever. The force of the rod is the same as the force of the stone, but the distance the rod moves",
+                "opt": "\n\nAnswer:\n\nMary can lift the stone by using the rod.\n\nExplanation:\n\nMary can lift the stone by using the rod.\n\nMary can lift the"
+            }
+        },
+        {
+            "question": "Mary can not lift a heavy stone by herself. However, she brought a calculator with her. Is Mary able to lift the stone?",
+            "responses": {
+                "openai": "\n\nNo, the calculator is not able to lift the stone.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is no.\nThe calculator is not a machine, so it cannot lift the stone.\n\nA:\n\nThe calculator is not a machine, so it cannot lift the stone.\n\nThe calculator",
+                "opt": "\n\nMary can lift the stone.\n\nMary can lift the stone.\n\nMary can lift the stone.\n\nMary can lift the stone.\n\nMary can lift the stone.\n\nMary"
+            }
+        },
+        {
+            "question": "Mary can not lift a heavy stone by herself. However, she brought a calculator with her. How can Mary lift the stone?",
+            "responses": {
+                "openai": "\n\nMary can't lift the stone by herself, but she can use the calculator to help her.",
+                "aleph_alpha": "\n\nA:\n\nMary can lift the stone by herself if she can calculate the force she needs to apply to the stone.\n\nA:\n\nMary can lift the stone by herself if she can calculate the force she needs to apply",
+                "opt": "\n\nAnswer:\n\nMary can lift the stone by using the calculator.\n\nExplanation:\n\nMary can lift the stone by using the calculator.\n\nMary can lift the stone by using the"
+            }
+        }
+    ]
+}

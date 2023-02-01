@@ -1,0 +1,165 @@
+{
+    "dataset": "causal_chains",
+    "queries": [
+        {
+            "question": "If A causes B and B causes C. Does A cause C?",
+            "responses": {
+                "openai": "\n\nIt is possible that A causes C, but it is also possible that A and C are unrelated.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is no.\nThe cause of a thing is the thing that makes it happen.\nThe cause of a thing is the thing that makes it happen.\nThe cause of a thing is the thing that makes",
+                "opt": "\n\nIf A causes B and B causes C, then A causes C.\n\nIf A causes B and B causes C, then A does not cause C.\n\nIf A causes B and B does not cause C, then A does not cause C.\n"
+            }
+        },
+        {
+            "question": "If A causes B and B causes C. Does A cause B?",
+            "responses": {
+                "openai": "\n\nThere is not enough information to answer this question.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is no.\nThe cause of a thing is the thing that makes it happen.\nThe cause of a thing is the thing that makes it happen.\nThe cause of a thing is the thing that makes",
+                "opt": "\n\nIf A causes B and B causes C, then A causes C.\n\nIf A causes B and B does not cause C, then A does not cause C.\n\nIf A causes B and B does not cause C, then A does not cause C"
+            }
+        },
+        {
+            "question": "If A causes B and B causes C. Does B cause C?",
+            "responses": {
+                "openai": "\n\nYes, B causes C.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is no.\nThe cause of a thing is the thing that makes it happen.\nThe cause of a thing is the thing that makes it happen.\nThe cause of a thing is the thing that makes",
+                "opt": "\n\nIf A causes B and B causes C, then A causes C.\n\nIf A causes B and B causes C, then A does not cause C.\n\nIf A causes B and B does not cause C, then A does not cause C.\n"
+            }
+        },
+        {
+            "question": "If A causes B and B causes C. Does A cause A?",
+            "responses": {
+                "openai": "\n\nA does not cause A.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is no.\nThe cause of a thing is the thing that caused it.\nThe cause of a thing is the thing that caused it.\nThe cause of a thing is the thing that caused it.",
+                "opt": "\n\nIf A causes B and B causes C, then A causes C.\n\nIf A causes B and B causes C, then A does not cause C.\n\nIf A causes B and B does not cause C, then A does not cause C.\n"
+            }
+        },
+        {
+            "question": "If A causes B and B causes C. Does B cause A?",
+            "responses": {
+                "openai": "\n\nThere is no definitive answer to this question as it depends on the specific situation. In some cases, B may cause A, while in others A may cause B.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is no.\nThe cause of A is A itself.\nThe cause of B is A and B.\nThe cause of C is A, B and C.\nThe cause of A is A itself",
+                "opt": "\n\nIf A causes B and B causes C, then A causes C.\n\nIf A causes B and B causes C, then A does not cause C.\n\nIf A causes B and B does not cause C, then A does not cause C.\n"
+            }
+        },
+        {
+            "question": "If A causes B and B causes C. Does C cause A?",
+            "responses": {
+                "openai": "\n\nThere is no definitive answer to this question as it depends on the specific situation. In some cases, it may be true that C causes A, while in other cases it may not be true.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is no.\nThe cause-effect relationship is a logical relationship. It is not a physical relationship.\nThe cause-effect relationship is a logical relationship. It is not a physical relationship.\n\nA",
+                "opt": "\n\nIf A causes B and B causes C, then A causes C.\n\nIf A causes B and B causes C, then B causes C.\n\nIf A causes B and B causes C, then A does not cause C.\n\nIf A causes"
+            }
+        },
+        {
+            "question": "If A causes B, B causes C and C causes D. Does A cause D?",
+            "responses": {
+                "openai": "\n\nA causes D.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is no.\nThe cause of A is A itself.\nThe cause of B is A and B.\nThe cause of C is A, B and C.\nThe cause of D is A,",
+                "opt": "\n\nIf A causes B, B causes C and C causes D. Does A cause D?\n\nIf A causes B, B causes C and C causes D. Does A cause D?\n\nIf A causes B, B causes C and"
+            }
+        },
+        {
+            "question": "If A causes B, B causes C, C causes D and D causes E. Does A cause E?",
+            "responses": {
+                "openai": "\n\nA causes E.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is no.\nThe cause-effect relationship is a logical relationship. It is not a physical relationship.\nThe cause-effect relationship is a logical relationship. It is not a physical relationship.\n\nA",
+                "opt": "\n\nIf A causes B, B causes C, C causes D and D causes E. Does A cause E?\n\nIf A causes B, B causes C, C causes D and D causes E. Does A cause E"
+            }
+        },
+        {
+            "question": "If A causes B, B causes C, C causes D, D causes E, E causes F. Does A cause F?",
+            "responses": {
+                "openai": "\n\nA does not necessarily cause F.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is yes.\nThe cause of A is B, the cause of B is C, the cause of C is D, the cause of D is E, the cause of E is F.\nSo the",
+                "opt": "\n\nIf A causes B, B causes C, C causes D, D causes E, E causes F, then A causes F.\n\nIf A causes B, B causes C, C causes D,"
+            }
+        },
+        {
+            "question": "If A causes B, B causes C, C causes D, D causes E, E causes F. Does B cause E?",
+            "responses": {
+                "openai": "\n\nThere is no definitive answer to this question as the relationship between B and E could be indirect.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is no.\nThe cause of B is A, and the cause of A is B.\nThe cause of B is A, and the cause of A is B.\nThe cause of B is A",
+                "opt": "\n\nIf A causes B, B causes C, C causes D, D causes E, E causes F. Does B cause E?\n\n\u2212\n\n\u2212\n\n===Example===\n\n\u2212\n"
+            }
+        },
+        {
+            "question": "If A causes B, B causes C, C causes D, D causes E, E causes F. Does E cause B?",
+            "responses": {
+                "openai": "\n\nThere is no definitive answer to this question as it depends on the specific circumstances of the situation. However, it is possible that E could cause B if, for example, E is a necessary component for the functioning of B.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is no.\nThe cause of B is A, and the cause of A is B.\nThe cause of C is B, and the cause of B is A.\nThe cause of D is C",
+                "opt": "\n\nIf A causes B, B causes C, C causes D, D causes E, E causes F. Does E cause B?\n\nIf A causes B, B causes C, C causes D,"
+            }
+        },
+        {
+            "question": "If B causes C and A causes B. Does A cause C?",
+            "responses": {
+                "openai": "\n\nThere is not enough information to determine if A causes C.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is no.\nThe cause of A is B, and the cause of B is A.\nThe cause of C is A, and the cause of A is B.\nSo, the cause of C",
+                "opt": "\n\nIf A causes B, then A causes C.\n\nIf A causes B, then C causes B.\n\nIf A causes B, then C causes A.\n\nIf A causes B, then C causes A.\n\nIf A causes B,"
+            }
+        },
+        {
+            "question": "If B causes C and A causes B. Does C cause A?",
+            "responses": {
+                "openai": "\n\nThere is no definitive answer to this question as it depends on the specific situation. In some cases, it may be true that C causes A, while in other cases it may not be true.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is no.\nThe cause of A is B, and the cause of B is A.\nThe cause of C is A, and the cause of A is B.\nThe cause of B is A",
+                "opt": "\n\nIf A causes B, then C causes A.\n\nIf A causes C, then B causes A.\n\nIf A causes B, then C causes A.\n\nIf A causes C, then B causes A.\n\nIf A causes B,"
+            }
+        },
+        {
+            "question": "If G causes Q and Q causes S. Does G cause S?",
+            "responses": {
+                "openai": "\n\nYes, G causes S.",
+                "aleph_alpha": "\n\nI'm trying to understand the concept of causation. I'm not sure if I'm understanding it correctly.\nIf G causes Q and Q causes S. Does G cause S?\n\nA:\n\nThe answer is no.",
+                "opt": "\n\nIf G causes S, then G causes Q.\n\nIf G causes Q, then G causes S.\n\nIf G does not cause S, then G does not cause Q.\n\nIf G does not cause Q, then G does not cause S"
+            }
+        },
+        {
+            "question": "If Q causes S and G causes Q . Does G cause S?",
+            "responses": {
+                "openai": "\n\nYes, G causes S.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is no.\nThe reason is that the cause of S is Q, and the cause of Q is G.\nSo, the cause of S is G.\n\nA:\n\nThe cause of",
+                "opt": "\nIf Q causes S and G causes Q, then G causes S.\n\nIf Q causes S and G causes Q, then G does not cause S.\n\nIf Q causes S and G does not cause Q, then G does not cause S.\n"
+            }
+        },
+        {
+            "question": "If A causes B. Does A cause B?",
+            "responses": {
+                "openai": "\n\nThere is no definitive answer to this question as it depends on the specific situation. In some cases, A may cause B, while in others A may not have any direct impact on B.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is yes.\nThe cause of the effect is the cause of the cause.\n\nA:\n\nThe cause of the effect is the cause of the cause.\n\nA:\n\nThe cause",
+                "opt": "                                                           "
+            }
+        },
+        {
+            "question": "If A causes B, B causes C, C causes D, D causes E, E causes F, F causes G. Does A cause G?",
+            "responses": {
+                "openai": "\n\nA does not necessarily cause G.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is yes.\nThe cause of A is B, the cause of B is C, the cause of C is D, the cause of D is E, the cause of E is F, the cause of",
+                "opt": "\n\nThe answer is no.\n\nThe reason is that the causal chain is not closed.\n\nIf A causes B, B causes C, C causes D, D causes E,"
+            }
+        },
+        {
+            "question": "If A causes B, B causes C, C causes D, D causes E, E causes F, F causes G, G causes H. Does A cause H?",
+            "responses": {
+                "openai": "\n\nA causes H.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is yes.\nThe cause of A is B, the cause of B is C, the cause of C is D, the cause of D is E, the cause of E is F, the cause of",
+                "opt": "\n\nThe answer is no.\n\nThe reason is that the causal chain is not closed.\n\nIf A causes B, B causes C, C causes D,"
+            }
+        },
+        {
+            "question": "If A causes B, B causes C, C causes D, D causes E, E causes F, F causes G, G causes H, H causes I. Does A cause I?",
+            "responses": {
+                "openai": "\n\nA does not necessarily cause I, although it is a possibility.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is yes.\nThe cause of A is A itself.\nThe cause of B is A and B.\nThe cause of C is A, B, and C.\nThe cause of D is A",
+                "opt": "\n\nThe answer is no.\n\nThe reason is that the causal chain is not closed.\n\nIf A causes B, B causes C,"
+            }
+        },
+        {
+            "question": "If A causes B, B causes C, C causes D, D causes E, E causes F, F causes G, G causes H, H causes I, I causes J. Does A cause J?",
+            "responses": {
+                "openai": "\n\nA causes J.",
+                "aleph_alpha": "\n\nA:\n\nThe answer is no.\nThe cause of A is A itself.\nThe cause of B is A and B.\nThe cause of C is A, B, and C.\nThe cause of D is A",
+                "opt": "\n\nThe answer is no.\n\nThe reason is that the causal chain is not closed.\n\nIf A causes B,"
+            }
+        }
+    ]
+}
