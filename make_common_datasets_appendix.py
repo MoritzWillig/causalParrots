@@ -31,11 +31,13 @@ group_names = {
     "chain": "Causal Chains",
     "sub": "Sub chains",
     "rand": "Randomized Variable",
+
     "rolling": "Rolling",
     "support": "Support",
     "collisions": "Collisions",
+    'seesaw': "Seesaw",
     "weights": "Weights",
-    "mechanisms": "Mechanisms"
+    "tools": "Tools"
 }
 
 dataset_datas={
@@ -92,6 +94,7 @@ def sanitize_answer(a: str):
     return s
 
 
+ds_total_queries = {}
 for dataset_name, dataset_label in zip(datasets, dataset_labels):
 
     groups = {}
@@ -106,23 +109,26 @@ for dataset_name, dataset_label in zip(datasets, dataset_labels):
 
         queries = data["queries"]
 
+        total_queries = 0
         for query in queries:
             idx = dataset_questions.index(query["question"])
             group = dataset_data[idx][0]
             if not group in groups:
                 groups[group] = []
-            groups[group].append([query["question"], query["responses"]])
+            groups[group].append(query)
+            total_queries += 1
 
         for name, group in groups.items():
             if name in process:
                 if process[name] == "order_len":
-                    groups[name] = sorted(group, key=lambda entry: len(entry[0]))
+                    groups[name] = sorted(group, key=lambda entry: len(entry["question"]))
+    ds_total_queries[dataset_name] = total_queries
 
     # print groups
-    for group in groups:
-        print("\\subsection{" + dataset_label + " - " + group_names[group] + "}")
+    for group_name, group in groups.items():
+        print("\\subsection{" + dataset_label + " - " + group_names[group_name] + "}")
 
-        for i, query in enumerate(queries):
+        for i, query in enumerate(group):
             question = query["question"]
             responses = query["responses"]
 
@@ -136,3 +142,6 @@ for dataset_name, dataset_label in zip(datasets, dataset_labels):
             text += "\\end{tabular}\n"
 
             print(text)
+
+for name, val in ds_total_queries.items():
+    print("total queries", name, val)
