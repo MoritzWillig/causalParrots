@@ -6,7 +6,7 @@ from networkx import *
 import matplotlib.pyplot as plt
 
 from causalFM.plot_config import arrow_active_color, arrow_alternative_color, arrow_inactive_color, \
-    arrow_positive_color, arrow_negative_color, arrow_unknown_color
+    arrow_positive_color, arrow_negative_color, arrow_unknown_color, arrow_meta_color
 
 var_positions = {
     # ALTITUDE
@@ -60,7 +60,7 @@ def lerp(a, b, x):
 
 def draw_edge(p0, p1, f01, f10, pad, active_color=None, alt_color=None, mode=None,
               label=None, label0=None, label1=None, label_x_percent=0.5,
-              color_p=None, color_n=None, color_u=None):
+              color_p=None, color_n=None, color_u=None, color_m=None):
     """
     :param p0: node0 position
     :param p1: node1 position
@@ -87,6 +87,8 @@ def draw_edge(p0, p1, f01, f10, pad, active_color=None, alt_color=None, mode=Non
         color_n = arrow_negative_color
     if color_u is None:
         color_u = arrow_unknown_color
+    if color_m is None:
+        color_m = arrow_meta_color
     inactive_color = arrow_inactive_color
 
     if mode is None:
@@ -106,19 +108,50 @@ def draw_edge(p0, p1, f01, f10, pad, active_color=None, alt_color=None, mode=Non
 
     if mode == "encode":
         #FIXME handle -1 edges (draw them grey?)
-        #1=edge, 0=no edge, -1=unknown
-        a01 = f01 == 1
-        a10 = f10 == 1
+        #1=edge, 0=no edge, -1=unknown, 1j = meta answer
+        a01 = f01 != 0
+        a10 = f10 != 0
         has_connection = a01 or a10
         if not has_connection:
             return
-        r_color01 = active_color
-        r_color10 = active_color
+
+        r_color01 = None
+        r_color10 = None
+
+        if f01 == 1:
+            r_color01 = active_color
+        elif f01 == 1j:
+            r_color01 = color_m
+        elif f01 == 0:
+            pass
+        else:
+            raise RuntimeError("unhandled edge type")
+        if f10 == 1:
+            r_color10 = active_color
+        elif f10 == 1j:
+            r_color10 = color_m
+        elif f10 == 0:
+            pass
+        else:
+            raise RuntimeError("unhandled edge type")
+
+        if r_color01 is None:
+            r_color01 = r_color10
+        if r_color10 is None:
+            r_color10 = r_color01
     elif mode == "sign":
+        cm = {
+            1: color_p,
+            0: color_n,
+            -1: color_u,
+            1j: color_m,
+        }
         a01 = True
         a10 = True
-        r_color01 = color_p if f01 > 0 else color_u if f01 < 0 else color_n
-        r_color10 = color_p if f10 > 0 else color_u if f10 < 0 else color_n
+        #r_color01 = color_p if f01 > 0 else color_u if f01 < 0 else color_n
+        #r_color10 = color_p if f10 > 0 else color_u if f10 < 0 else color_n
+        r_color01 = cm[f01]
+        r_color10 = cm[f10]
     elif mode == "strength":
         a01 = f01 != 0
         a10 = f10 != 0
@@ -192,7 +225,7 @@ def plot_from_adj_mat(
         edge_labels=None, edge_mode=None):
     """
 
-    :param adj_mat: 2d-array [i,j]=1 = i->j
+    :param adj_mat: 2d-array [i,j]=1 = i->j, [i,j]=imag = meta answer
     :param var_names:
     :param dataset_name:
     :param ax:

@@ -10,8 +10,11 @@ base_name = "common"
 base_dir = evaluations_dir / base_name
 base_dir.mkdir(exist_ok=True)
 
-from_apis = ["openai", "aleph_alpha", "opt"]
-datasets = ["intuitive_physics", "causal_chains"]
+from_apis = ["gpt_4", "openai", "aleph_alpha", "opt"]
+#from_apis = ["openai", "aleph_alpha"]
+#datasets = ["intuitive_physics", "causal_chains"]
+#datasets = [f"causal_chains_cot_{i}" for i in range(1,9)]
+datasets = ["causal_world", *[f"causal_world_cot_{i}" for i in range(1, 5)]]
 
 
 for dataset_name in datasets:

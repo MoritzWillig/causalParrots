@@ -31,7 +31,7 @@ def query_opt(context, query_text, dry_run=False):
     if dry_run:
         return None
     input_ids = tokenizer(query_text, return_tensors="pt").input_ids.cuda()
-    generated_ids = model.generate(input_ids, num_return_sequences=1, max_length=70)
+    generated_ids = model.generate(input_ids, num_return_sequences=1, max_length=1000)
 
     results = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)
     return results[0][len(query_text):]

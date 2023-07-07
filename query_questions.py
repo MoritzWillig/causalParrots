@@ -2,7 +2,7 @@ from pathlib import Path
 import time
 
 from causalFM.api.aleph_alpha_api import startup_aleph_alpha, query_aleph_alpha
-from causalFM.api.openai_api import startup_openai, query_openai
+from causalFM.api.openai_api import startup_openai, query_openai, query_openai_gpt_4
 from causalFM.api.opt_api import startup_opt, query_opt
 from causalFM.query_helpers import load_query_instances
 
@@ -10,12 +10,13 @@ dry_run = False  # does not query the APIs. (But saves results, if dry run retur
 skip_existing = True  # skip samples for which a file exists
 test_single = False  # if true, stops after the first query
 
-active_apis = ["openai", "aleph_alpha", "opt"]
-#active_apis = ["openai", "aleph_alpha"]
+#active_apis = ["openai", "aleph_alpha", "opt"]
+active_apis = ["openai", "gpt_4", "aleph_alpha", "opt"]
 #active_apis = ["openai"]
+#active_apis = ["gpt_4"]
 #active_apis = ["aleph_alpha"]
 #active_apis = ["opt"]
-#datasets = ["altitude", "causal_health", "driving", "recovery", "cancer", "earthquake", "intuitive_physics", "causal_chain"] # base
+#datasets = ["altitude", "causal_health", "driving", "recovery", "cancer", "earthquake", "intuitive_physics", "causal_chains"] # base
 #datasets = [
 #    "causal_health__alt_age_aging",
 #    "causal_health__alt_health_conditions",
@@ -25,16 +26,20 @@ active_apis = ["openai", "aleph_alpha", "opt"]
 #    "causal_health__alt_nutrition_diet",
 #    "causal_health__alt_nutrition_habits"
 #] # alternatives
-#datasets = ["altitude", "causal_health", "driving", "recovery", "cancer", "earthquake", "intuitive_physics", "causal_chain",
-#    "causal_health__alt_age_aging",
-#    "causal_health__alt_health_conditions",
-#    "causal_health__alt_health_healthiness",
-#    "causal_health__alt_mobility_agility",
-#    "causal_health__alt_mobility_fitness",
-#    "causal_health__alt_nutrition_diet",
-#    "causal_health__alt_nutrition_habits"
-#]
-datasets = ["causal_chains"]
+#datasets = ["causal_world", "causal_world_cot_4"]
+datasets = ["altitude", "causal_health", "driving", "recovery", "cancer", "earthquake",
+    "causal_health__alt_age_aging",
+    "causal_health__alt_health_conditions",
+    "causal_health__alt_health_healthiness",
+    "causal_health__alt_mobility_agility",
+    "causal_health__alt_mobility_fitness",
+    "causal_health__alt_nutrition_diet",
+    "causal_health__alt_nutrition_habits",
+    "intuitive_physics", "causal_chains",
+    *[f"causal_chains_cot_{i}" for i in range(1, 9)],
+    "causal_world",
+    *[f"causal_world_cot_{i}" for i in range(1, 5)],
+]
 
 keys_dir = Path("./keys")
 queries_path = Path("./queries")
@@ -43,7 +48,12 @@ apis = {
     "openai": {
         "startup": startup_openai,
         "query": query_openai,
-        "limit": 5  # max requests per min
+        "limit": 10  # max requests per min
+    },
+    "gpt_4": {
+        "startup": startup_openai,
+        "query": query_openai_gpt_4,
+        "limit": 100  # max requests per min
     },
     "aleph_alpha": {
         "startup": startup_aleph_alpha,
@@ -104,7 +114,8 @@ def main():
                 if min_request_time is not None:
                     current_time = time.perf_counter()
                     elapsed_time = current_time - last_query_time
-                    time.sleep(min_request_time - elapsed_time)
+                    if elapsed_time < min_request_time:
+                        time.sleep(min_request_time - elapsed_time)
                     last_query_time = time.perf_counter()
 
 

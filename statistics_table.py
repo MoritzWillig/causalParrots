@@ -4,8 +4,6 @@ from pathlib import Path
 import networkx as nx
 import numpy as np
 
-from causalFM.answer_helpers import get_response_flags, load_compact_answers
-from causalFM.graph_metrics import graph_metrics
 from causalFM.query_helpers import question_templates
 from causalFM.gt_helpers import get_gt_graph, get_graph_from_adj_mat
 
@@ -14,10 +12,9 @@ from causalFM.gt_helpers import get_gt_graph, get_graph_from_adj_mat
 #dataset_labels = ["Altitude", "Health", "Driving", "Recovery", "Cancer", "Earthquake"]
 
 #allow_quiz_answers = True  # include quiz-style answers
-#positive_response_flags, negative_response_flags, undecided_response_flags = get_response_flags(allow_quiz_answers)
 # d_adj_mats = []  # adj_mat = [DATATSETS][NUM_APIS, NUM_TEMPLATES, FROM_VAR, TO_VAR]
 # for dataset in datasets:
-#    adj_mats, variable_names, _ = load_compact_answers(dataset, from_apis, len(question_templates), positive_response_flags, negative_response_flags, undecided_response_flags)
+#    adj_mats, variable_names, _ = load_compact_answers(dataset, from_apis, len(question_templates))
 #    d_adj_mats.append(adj_mats)
 
 def compute_cache(

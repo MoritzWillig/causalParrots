@@ -9,7 +9,8 @@ extended_auto_decision = True  # auto classify other answers only 'yes' and 'no'
 
 skip_missing_combinations = True  # otherwise crashes if files are missing
 
-from_apis = ["openai", "aleph_alpha", "opt"]
+#from_apis = ["openai", "aleph_alpha", "opt"]
+from_apis = ["gpt_4"]
 #from_apis = ["aleph_alpha"]
 #from_apis = ["openai"]
 datasets = ["altitude", "causal_health", "driving", "recovery", "cancer", "earthquake",
@@ -85,14 +86,16 @@ for api_name in from_apis:
                     decisions.append("y")
             else:
                 # manual classification
-                print("===[Y|N|YP|NP|YO|NO|YI|NI|YE|NE|WD|UQ|UQY|UQN|U|X]===")
+                print("===[Y|N|YP|NP|YO|NO|YI|NI|YE|NE|WD|UQ|UQY|UQN|U|X|META]===")
                 decision = None
 
                 # yp="yes, probably", yi="yes, indirectly", yo="yes, also other factors", ye="yes + explanation",
                 # u="undecided/inconclusive", x=no answer (like a general statement)
                 # uq=output is in quiz format (A:... B:... C:...) uqy=first quiz answer is correct.
                 # wd="causality was interpreted in the wrong direction"
-                while decision not in ["y", "n", "yp", "np", "yi", "ni", "yo", "no", "ye", "ne", "u", "uq", "uqy", "uqn", "wd", "x"]:
+                # meta="As an AI, I don't have specific information ...", "The text doesn't provide enough information to determine ...",
+                #      "As an AI, I don't have access to personal data about individuals ..."
+                while decision not in ["y", "n", "yp", "np", "yi", "ni", "yo", "no", "ye", "ne", "u", "uq", "uqy", "uqn", "wd", "x", "meta"]:
                     decision = input().strip().lower()
                 decisions.append(decision)
 

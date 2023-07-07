@@ -4,9 +4,9 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-from causalFM.answer_helpers import get_response_flags, categorize_answers, load_compact_answers, adj_mat_to_list
+from causalFM.answer_helpers import load_compact_answers, adj_mat_to_list
 from causalFM.plot import plot_from_adj_mat
-from causalFM.query_helpers import load_query_instances, question_templates
+from causalFM.query_helpers import question_templates
 
 save_fig = True
 test_run = False  # if true stops after first plot
@@ -18,12 +18,12 @@ base_dir = evaluations_dir / base_name
 base_dir.mkdir(exist_ok=True)
 
 
-from_apis = ["openai", "aleph_alpha", "opt"]
+from_apis = ["openai", "aleph_alpha", "opt", "gpt_4"]
+#from_apis = ["gpt_4"]
 datasets = ["altitude", "causal_health", "driving", "recovery", "cancer", "earthquake"]
 dataset_labels = ["Altitude", "Health", "Driving", "Recovery", "Cancer", "Earthquake"]
 
 allow_quiz_answers = True  # include quiz-style answers
-positive_response_flags, negative_response_flags, undecided_response_flags = get_response_flags(allow_quiz_answers)
 
 d_adj_mats = []
 d_variable_names = []
@@ -31,7 +31,7 @@ d_queries = []
 
 for dataset in datasets:
     # adj_mat.shape = [NUM_APIS, NUM_TEMPLATES, FROM_VAR, TO_VAR]
-    adj_mats, variable_names, queries = load_compact_answers(dataset, from_apis, len(question_templates), positive_response_flags, negative_response_flags, undecided_response_flags)
+    adj_mats, variable_names, queries = load_compact_answers(dataset, from_apis, len(question_templates))
     d_adj_mats.append(adj_mats)
     d_variable_names.append(variable_names)
     d_queries.append(queries)
@@ -61,12 +61,14 @@ for api_idx, api in enumerate(from_apis):
 
             def get_edge_type_label(a, i, j):
                 et = a[i, j]
-                if et > 0:
+                if et == 1:
                     return "+"
                 elif et == 0:
                     return "-"
                 elif et < 0:
                     return "?"
+                elif et == 1j:
+                    return "m"
 
             adj_labels = adj_mat_to_list(adj_mat, get_edge_type_label)
             plot_from_adj_mat(

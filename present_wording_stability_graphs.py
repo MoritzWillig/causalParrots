@@ -4,10 +4,10 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-from causalFM.answer_helpers import get_response_flags, categorize_answers, load_compact_answers, adj_mat_to_list, \
+from causalFM.answer_helpers import load_compact_answers, adj_mat_to_list, \
     load_alternative
 from causalFM.plot import plot_from_adj_mat
-from causalFM.query_helpers import load_query_instances, question_templates
+from causalFM.query_helpers import question_templates
 
 save_fig = True
 test_run = False  # if true stops after first plot
@@ -19,7 +19,8 @@ base_dir = evaluations_dir / base_name
 base_dir.mkdir(exist_ok=True)
 
 
-from_apis = ["openai", "aleph_alpha", "opt"]
+#from_apis = ["openai", "aleph_alpha", "opt", "gpt_4"]
+from_apis = ["gpt_4"]
 dataset = "causal_health"
 dataset_labels = ["Health"]
 
@@ -34,7 +35,6 @@ alternatives = [
 ]
 
 allow_quiz_answers = True  # include quiz-style answers
-positive_response_flags, negative_response_flags, undecided_response_flags = get_response_flags(allow_quiz_answers)
 
 alt_adj_mats = []
 alt_masks = []
@@ -43,11 +43,11 @@ altered_names = []
 
 alt_names_set = set(alt_names)
 
-adj_mats, variable_names, queries = load_compact_answers(dataset, from_apis, len(question_templates), positive_response_flags, negative_response_flags, undecided_response_flags)
+adj_mats, variable_names, queries = load_compact_answers(dataset, from_apis, len(question_templates))
 
 for alternative in alternatives:
     # adj_mat.shape = [NUM_APIS, NUM_TEMPLATES, FROM_VAR, TO_VAR]
-    alt_adj_mat, alt_mask, alt_name, altered_name = load_alternative(alternative, adj_mats, variable_names, from_apis, len(question_templates), positive_response_flags, negative_response_flags, undecided_response_flags)
+    alt_adj_mat, alt_mask, alt_name, altered_name = load_alternative(alternative, adj_mats, variable_names, from_apis, len(question_templates))
     alt_adj_mats.append(alt_adj_mat)
     alt_masks.append(alt_mask)
     alt_names.append(alt_name[0])

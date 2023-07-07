@@ -4,12 +4,12 @@ from pathlib import Path
 import networkx as nx
 import numpy as np
 
-from causalFM.answer_helpers import get_response_flags, load_compact_answers
+from causalFM.answer_helpers import load_compact_answers
 from causalFM.graph_metrics import graph_metrics
 from causalFM.query_helpers import question_templates
 from causalFM.gt_helpers import get_gt_graph, get_graph_from_adj_mat
 
-recompute_cache = True
+recompute_cache = False
 debug_recompute_metric = None
 #debug_recompute_metric = [7]  # results are not cached
 
@@ -22,14 +22,16 @@ base_dir.mkdir(exist_ok=True)
 
 cache_file = base_dir / "statistics.pkl"
 
-from_apis = ["openai", "aleph_alpha", "opt"]
-api_names = ["GPT-3", "Luminous", "OPT"]
+#from_apis = ["gpt_4"]
+from_apis = ["openai", "gpt_4", "aleph_alpha", "opt"]
+#api_names = ["GPT-4"]
+api_names = ["GPT-3", "GPT-4", "Luminous", "OPT"]
+#datasets = ["earthquake"]
 datasets = ["altitude", "causal_health", "driving", "recovery", "cancer", "earthquake"]
+#dataset_labels = ["Earthquake"]
 dataset_labels = ["Altitude", "Health", "Driving", "Recovery", "Cancer", "Earthquake"]
-#dataset_labels = ["A", "H", "D", "R", "C", "E"]
 
 allow_quiz_answers = True  # include quiz-style answers
-positive_response_flags, negative_response_flags, undecided_response_flags = get_response_flags(allow_quiz_answers)
 
 d_adj_mats = []
 d_variable_names = []
@@ -37,7 +39,7 @@ d_queries = []
 
 for dataset in datasets:
     # adj_mat.shape = [NUM_APIS, NUM_TEMPLATES, FROM_VAR, TO_VAR]
-    adj_mats, variable_names, queries = load_compact_answers(dataset, from_apis, len(question_templates), positive_response_flags, negative_response_flags, undecided_response_flags)
+    adj_mats, variable_names, queries = load_compact_answers(dataset, from_apis, len(question_templates))
     d_adj_mats.append(adj_mats)
     d_variable_names.append(variable_names)
     d_queries.append(queries)
@@ -67,6 +69,7 @@ if recompute_cache or not cache_file.exists():
                 directed = template["direction"] == "directed"
 
                 adj_mat = adj_mats[api_idx, template_idx, :, :]
+                adj_mat = np.where(abs(adj_mat.imag) > 0, gt_graph, adj_mat.real)  # replace meta answers with ground truth
                 adj_mat = adj_mat.clip(min=0.0)  # 0=No edge, 1=Edge, -1=Undecided->No Edge
 
                 predicted_graph = get_graph_from_adj_mat(adj_mat, node_names)
