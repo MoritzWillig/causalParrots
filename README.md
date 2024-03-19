@@ -1,11 +1,15 @@
 # Causal Parrots: Large Language Models May Talk Causality But Are Not Causal
 
+Matej Zečević, Moritz Willig, Devendra Singh Dhami, Kristian Kersting  
+Published in Transactions on Machine Learning Research  
+Link to Paper: [https://openreview.net/pdf?id=tv46tCzs83](https://openreview.net/pdf?id=tv46tCzs83)
+
 **Abstract**
 Some argue scale is all what is needed to achieve AI, covering even causal models. We make it clear that large language models (LLMs) cannot be causal and give reason onto why sometimes we might feel otherwise. To this end, we define and exemplify a new subgroup of Structural Causal Model (SCM) that we call meta SCM which encode causal facts about other SCM within their variables. We conjecture that in the cases where LLM succeed in doing causal inference, underlying was a respective meta SCM that exposed correlations between causal facts in natural language on whose data the LLM was ultimately trained. If our hypothesis holds true, then this would imply that LLMs are like parrots in that they simply recite the causal knowledge embedded in the data. Our empirical analysis provides favoring evidence that current LLMs are even weak `causal parrots.'
 
 ![When processing language we encounter a meta-level causal setting](media/different-representations.png)
 
-# Instructions
+## Instructions
 ```
 conda create -n fm python=3.8
 conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
@@ -35,3 +39,8 @@ pip install wrapt, transformers, openai, aleph_alpha_client
    * `present_wording_stability_graphs.py` - Displays the differences in connectivity when changing variable wordings.
    * `present_common_datasets.py` - Stores queries and answers into a single json file.
 5. CCF experiments are stored in the `embeddings` folder.
+
+## ConceptNet Cause-Effect Pairs
+The cause-effect pairs extracted from [ConceptNet](https://www.conceptnet.io/) can be found at [embeddings/cause_effect_pairs/conceptnet_cause_sets.txt](./embeddings/cause_effect_pairs/conceptnet_cause_sets.txt). Please note that --like for ConceptNet-- the extracted data is licensed under the Creative Commons Attribution-ShareAlike license (CC BY SA 4.0) (see [embeddings/cause_effect_pairs/license.txt](./embeddings/cause_effect_pairs/license.txt)).
+
+For recreating the cause-effect data set see the comments at the start of [embeddings/prepare_concept_net_data.py](./embeddings/prepare_concept_net_data.py).

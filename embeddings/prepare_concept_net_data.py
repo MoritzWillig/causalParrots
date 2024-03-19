@@ -3,7 +3,7 @@ import json
 # create causes_en.csv from ConceptNet (conceptnet-assertions-5.7.0.csv.gz) data:
 # grep "/r/Causes/" ./assertions.csv > causes.csv
 # grep "/c/en/" ./causes.csv > causes_en.csv
-# python extract.py
+# python prepare_concept_net_data.py
 
 source_file_name = "./causes_en.csv"
 filter_file_name = "./conceptnet_cause_sets.txt"
@@ -64,3 +64,4 @@ with open(filter_file_name, "w+") as f:
 print(f"found {causes_count} causes")
 print(f"prepared {total_count} cause-effect pairs")
 print("done.")
+

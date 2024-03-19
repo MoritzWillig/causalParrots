@@ -1,0 +1,3 @@
+This work includes data from ConceptNet 5, which was compiled by the Commonsense Computing Initiative. ConceptNet 5 is freely available under the Creative Commons Attribution-ShareAlike license (CC BY SA 4.0) from http://conceptnet.io. The included data was created by contributors to Commonsense Computing projects, contributors to Wikimedia projects, Games with a Purpose, Princeton University's WordNet, DBPedia, OpenCyc, and Umbel.
+
+The (english) cause-effect pairs presented in 'conceptnet_cause_sets.txt' are, therefore, also licensed under the same Creative Commons Attribution-ShareAlike license (CC BY SA 4.0).
